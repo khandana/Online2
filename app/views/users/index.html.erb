@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+<div>
+<h1>Created Users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+ 
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+<div>
+<br>
+
+<header	class="navbar	navbar-fixed-top	navbar-inverse">
+		<div	class="container">
+		
+				
+				<nav>						<ul	class="nav	navbar-nav	navbar-right">
+								
+								<li><%= link_to 'New User', new_user_path %></li>
+								<li><%= link_to 'Customer', new_customer_path %></li>
+								
+								<li><%= link_to 'Order' , new_order_path %></li>
+								<li><%= link_to 'Order_line', new_order_line_path %></li>
+								<li><%= link_to 'Product', new_product_path %></li>
+								<li><%= link_to 'catagory', new_catagory_path %></li>
+								
+						</ul>
+				</nav>
+		</div>
+</header>
